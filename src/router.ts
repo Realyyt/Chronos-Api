@@ -4,9 +4,18 @@ const router = Router();
 /**
  * Product
  */
+
 router.get("/product", (req, res) => {
-  res.json({ message: "product" });
+  res.json({ message: req.shh });
 });
+
+/*
+
+router.get("/product", (req, res) => {
+  res.status(401);
+  res.json({ message: "Unauthorized" });
+});
+ */
 
 router.get("/product/:id", (req, res) => {});
 
