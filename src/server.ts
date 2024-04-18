@@ -5,6 +5,7 @@ import { request } from "http";
 
 
 import { protect } from "./modules/auth";
+import { createNewUser } from "./handlers/user";
 
 const app = express();
 
@@ -30,5 +31,6 @@ app.get("/", (req, res) => {
 });
 
 app.use('/api', protect , router);
+app.post("/user", createNewUser)
 
 export default app;
