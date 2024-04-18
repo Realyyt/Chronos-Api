@@ -16,6 +16,7 @@ export const createJWT = (user:any) => {
     );
     return token;
 };
+
 export const protect = (req:any, res:any, next: () => void) => {
   const bearer = req.headers.authorization;
 
