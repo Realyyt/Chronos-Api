@@ -5,7 +5,7 @@ import { request } from "http";
 
 
 import { protect } from "./modules/auth";
-import { createNewUser } from "./handlers/user";
+import { createNewUser, signInUser } from "./handlers/user";
 
 const app = express();
 
@@ -32,5 +32,6 @@ app.get("/", (req, res) => {
 
 app.use('/api', protect , router);
 app.post("/user", createNewUser)
+app.post("/signin", signInUser);
 
 export default app;
