@@ -3,6 +3,9 @@ import router from "./router"
 import morgan from  "morgan"
 import { request } from "http";
 
+
+import { protect } from "./modules/auth";
+
 const app = express();
 
 declare module 'express-serve-static-core' {
@@ -26,6 +29,6 @@ app.get("/", (req, res) => {
   res.json({ message: "hello" });
 });
 
-app.use('/api', router);
+app.use('/api', protect , router);
 
 export default app;
